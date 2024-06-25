@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1042964541953",
+    "project_id": "b2firebaseapp",
+    "storage_bucket": "b2firebaseapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1042964541953:android:9f40f54ab7dbd569b48600",
+        "android_client_info": {
+          "package_name": "a.practice.b2firebaseapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCjKOEoZ9R6_bKcYfGt5_rNC4HcQ8UK-YE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
