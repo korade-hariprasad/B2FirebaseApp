@@ -35,11 +35,10 @@ public class AddStudentInfoActivity extends AppCompatActivity {
         db=FirebaseFirestore.getInstance();
         btnAdd.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-
+            public void onClick(View v)
+            {
                 DocumentReference docRef=db.collection("students").document();
                 String docId=docRef.getId();
-
                 db.collection("students")
                         .document(docId)
                         .set(new Student(docId,etName.getText().toString().trim(),Integer.parseInt(etAge.getText().toString())))
@@ -60,42 +59,12 @@ public class AddStudentInfoActivity extends AppCompatActivity {
                             @Override
                             public void onFailure(@NonNull Exception e) {
                                 Toast.makeText(AddStudentInfoActivity.this, ""+e.getMessage(), Toast.LENGTH_SHORT).show();
-
                             }
                         });
 
             }
-
         });
     }
 
-    void addStudent(String name, int age){
 
-        DocumentReference reference=db.collection("students").document();
-        String docId=reference.getId();
-        db.collection("users")
-                .document(docId)
-                .set(new Student(docId,name,age))
-                .addOnCompleteListener(new OnCompleteListener<Void>() {
-                    @Override
-                    public void onComplete(@NonNull Task<Void> task) {
-                        if(task.isSuccessful())
-                        {
-                            Toast.makeText(AddStudentInfoActivity.this, "Student Added", Toast.LENGTH_SHORT).show();
-                            finish();
-
-                        }else{
-                            Toast.makeText(AddStudentInfoActivity.this, "Failed to add Student", Toast.LENGTH_SHORT).show();
-                        }
-                    }
-                })
-                .addOnFailureListener(new OnFailureListener() {
-                    @Override
-                    public void onFailure(@NonNull Exception e) {
-
-                            Toast.makeText(AddStudentInfoActivity.this, ""+e.getMessage(), Toast.LENGTH_SHORT).show();
-                            finish();
-                    }
-                });
-    }
 }
